@@ -29,6 +29,8 @@ Like any company - AwesomeCorp's code has some problems! - as the software devel
 ## The Rules
  - Please limit your time on this to two hours.
  - It's okay to refactor - in fact, we _encourage_ refactoring to make it easier to work with the code in future. 
+ - You can provide the solution to us however you like - Using a git repo, zip file, email, etc. Feel free to provide diagrams or any attachments.
+ 
  - **We do not mind if you run out of time, or cannot solve the problems**. However, where you have not solved the problems, we expect you to tell us:
   - How you _would_ have liked to solve the problem.
   - What challenges you faced when deciding on a solution.
