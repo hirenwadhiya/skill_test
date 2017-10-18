@@ -5,15 +5,18 @@ You are a software developer responsible for the code for a company (AwesomeCorp
 This system was originally built in 2007 and has gone through many iterations and different developers over the years. 
 
 Originally, in 2007 employees could "self-register" via a web UI when they joined AwesomeCorp.
-    - Accessible via `/web_app/new.php`
-    - This allows the employee to enter their details, and choose their own password.
-    - The employee gets re-direct the employee to a dashboard page once they have registered. `/web_app/dashboard.php`
+
+ - Accessible via `/web_app/new.php`
+ - This allows the employee to enter their details, and choose their own password.
+ - The employee gets re-direct the employee to a dashboard page once they have registered. `/web_app/dashboard.php`
 
 In 2012, AwesomeCorp grew, and started recruiting staff through a 3rd party company, RecruiterForce (in addition to their normal way). This meant that RecruiterForce's systems needed a way to pass details to AwesomeCorp. The developers at AwesomeCorp developed an API for this to happen.
+
  - The API endpoint is: [root]/api/new.php
  - Because this is a process that happens "behind the scenes" - the employee's password is automatically generated.
 
 In both ways of creating an employee, for every employee added to AwesomeCorp's system:
+
  - There is an email sent to the employee, advising them where they can login, and their password
  - There is an audit log entry created for AwesomeCorp's records.
 
