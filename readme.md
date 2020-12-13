@@ -1,4 +1,4 @@
-#Background:
+# History
 
 You are a software developer responsible for the code for a company (AwesomeCorp) that, like any good company, records the details of their employees. AwesomeCorp has developed an internal system to keep track of their employees. 
 
@@ -21,7 +21,7 @@ In both ways of creating an employee, for every employee added to AwesomeCorp's 
  - There is an audit log entry created for AwesomeCorp's records.
 
 
-#Problems:
+# Scenario
 Like any company - AwesomeCorp's code has some problems! - as the software developer, it is your job to solve these problems for them. It will also be your job to maintain and manage this code in future.  
 
 ## The Problems
@@ -30,18 +30,16 @@ Like any company - AwesomeCorp's code has some problems! - as the software devel
  - Due to new regulations, AwesomeCorp needs to provide a report to the government about all of their new employees. Luckily, another team will take care of actually passing the report content, but they have requested a file on the server, in /tmp/employee_report.csv that contains CSV data of all newly created employees, in the format of: `[employee id],[employee name],[employee email]`. This file should get a new line added every time there is a new employee created.
 
 ## The Rules
- - Please limit your time on this to two hours.
+ - Please limit your time on this to two hours or less.
  - It's okay to refactor - in fact, we _encourage_ refactoring to make it easier to work with the code in future. 
- - You can provide the solution to us however you like - Using a git repo, zip file, email, etc. Feel free to provide diagrams or any attachments.
- 
+ - Please fork this repository, and create a PR into your forked repo, send us the link to the PR.
+ - Feel free to provide diagrams or any documentation, on the PR.
  - **We do not mind if you run out of time, or cannot solve the problems**. However, where you have not solved the problems, we expect you to tell us:
      - How you _would_ have liked to solve the problem.
      - What challenges you faced when deciding on a solution.
      - Any additional information you would like to know to do a better job.
   
-
-
-#Tech Stuff / Requirements:
+# Tech Stuff 
 - This code should run on php 5.x. 
 - You can find the database schema in `assets/db.sql`.
 - The code assumes (in a few places) that the db is hosted on "localhost", with "root" user and no password. The db name is assumed to be "test". Feel free to change this to suit if required.
