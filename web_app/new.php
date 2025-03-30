@@ -1,9 +1,12 @@
 <?php
 require '../connection.php';
+require 'csv.php';
+
 $connection = connect();
 $sql = "select * from genders";
 global $genders;
 $genders = $connection->query($sql);
+$csvPath = '../tmp/employee_report.csv';
 
 if ($_POST) {
     $name = '"' . $connection->real_escape_string($_POST['name']) . '"';
@@ -17,7 +20,18 @@ if ($_POST) {
 
     if (!$result) {
         die("<h2>Sorry could not add employee: " . mysqli_error($connection). "</h2>" );
+    }
 
+    try {
+        if (!file_exists($csvPath)) {
+            generateCsvIfNotExists($csvPath);
+        }
+        $employee['id'] = $connection->insert_id;
+        $employee['name'] = str_replace('"', '', $name);
+        $employee['email'] = str_replace('"', '', $email);
+        appendEmployeeData($csvPath, $employee);
+    } catch (Exception $e) {
+        die("Could not append employee date to csv: " . $e->getMessage());
     }
 
     $timestamp = date("d/m/y h:i:s");
