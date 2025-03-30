@@ -68,3 +68,28 @@ UNLOCK TABLES;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+DROP TABLE IF EXISTS `genders`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `genders` (
+                           `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+                           `name` varchar(255) DEFAULT NULL,
+                           PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `genders`
+INSERT INTO `genders` (name) VALUES ('male'), ('female');
+--
+
+LOCK TABLES `genders` WRITE;
+/*!40000 ALTER TABLE `genders` DISABLE KEYS */;
+/*!40000 ALTER TABLE `genders` ENABLE KEYS */;
+UNLOCK TABLES;
+
+ALTER TABLE employee
+    ADD COLUMN gender_id int(11) unsigned NOT NULL,
+ADD CONSTRAINT fk_gender
+    FOREIGN KEY (gender_id) REFERENCES genders(id);
