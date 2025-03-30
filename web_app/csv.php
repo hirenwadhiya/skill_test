@@ -2,6 +2,10 @@
 
 function generateCsvIfNotExists($file)
 {
+    $directory = '../tmp';
+    if (!mkdir($directory, 0777, true) && !is_dir($directory)) {
+        throw new \RuntimeException(sprintf('Directory "%s" was not created', $directory));
+    }
     $list = array(
         array('employee id', 'employee name', 'employee email'),
     );
